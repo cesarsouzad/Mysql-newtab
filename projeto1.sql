@@ -1,4 +1,7 @@
+create database projeto1;
+
 use projeto1;
+
 CREATE TABLE `controle_financeiro` (
   `id` int NOT NULL AUTO_INCREMENT,
   `transacao` enum('compra','venda') NOT NULL,
@@ -14,6 +17,8 @@ insert into controle_financeiro values
 (default, 'compra', 'guitarra', '2300', '2021-01-11 15:22:12'),
 (default, 'venda', 'cavaco', '600', '2021-08-12 15:22:12');
 
+select * from controle_financeiro order by reg;
 
-select * from controle_financeiro
+select sum(valor) as total from controle_financeiro;
 
+truncate controle_financeiro;
